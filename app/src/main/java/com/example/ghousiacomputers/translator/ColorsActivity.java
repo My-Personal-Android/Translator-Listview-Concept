@@ -15,20 +15,19 @@ public class ColorsActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
     private AudioManager audioManager;
 
-    private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener =
-            onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
-                @Override
-                public void onAudioFocusChange(int focusChange) {
-                    if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-                        mediaPlayer.pause();
-                        mediaPlayer.seekTo(0);
-                    } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
-                        releaseMediaplayer();
-                    } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
-                        mediaPlayer.start();
-                    }
-                }
-            };
+    private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
+        @Override
+        public void onAudioFocusChange(int focusChange) {
+            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+                mediaPlayer.pause();
+                mediaPlayer.seekTo(0);
+            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
+                releaseMediaplayer();
+            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+                mediaPlayer.start();
+            }
+        }
+    };
     private MediaPlayer.OnCompletionListener onCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mp) {
@@ -83,7 +82,6 @@ public class ColorsActivity extends AppCompatActivity {
 
     protected void onPause() {
         super.onPause();
-        releaseMediaplayer();
     }
 
     private void releaseMediaplayer() {

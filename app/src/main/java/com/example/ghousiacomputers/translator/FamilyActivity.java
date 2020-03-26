@@ -16,7 +16,8 @@ public class FamilyActivity extends AppCompatActivity {
     private AudioManager audioManager;
 
     private AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener =
-            onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
+
+           new AudioManager.OnAudioFocusChangeListener() {
                 @Override
                 public void onAudioFocusChange(int focusChange) {
                     if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
@@ -86,7 +87,6 @@ public class FamilyActivity extends AppCompatActivity {
 
     protected void onPause() {
         super.onPause();
-        releaseMediaplayer();
     }
 
     private void releaseMediaplayer() {

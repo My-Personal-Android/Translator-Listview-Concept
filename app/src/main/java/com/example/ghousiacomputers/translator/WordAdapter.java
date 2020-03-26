@@ -21,7 +21,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-//check if new view is required or not
+        //check if new view is required or not
         View ListItemView = convertView;
         if (ListItemView == null) {
             ListItemView = LayoutInflater.from(getContext()).inflate(R.layout.listview_item, parent, false);
@@ -30,11 +30,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
         Word currentWord = getItem(position);
 
         TextView Frenchnumbertextview = (TextView) ListItemView.findViewById(R.id.French_Textview);
-        Frenchnumbertextview.setText(currentWord.getFrenchtranslation());
+        Frenchnumbertextview.setText(currentWord.getFrenchTranslation());
 
 
         TextView defaultnumbertextview = (TextView) ListItemView.findViewById(R.id.Default_Textview);
-        defaultnumbertextview.setText(currentWord.getEnglishtranslation());
+        defaultnumbertextview.setText(currentWord.getEnglishTranslation());
 
 
         ImageView relatedimage = (ImageView) ListItemView.findViewById(R.id.image_area);

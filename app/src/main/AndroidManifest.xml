@@ -21,7 +21,6 @@
             android:parentActivityName=".MainActivity">
 
         </activity>
-
         <activity
             android:name=".FamilyActivity"
             android:label="@string/category_family"

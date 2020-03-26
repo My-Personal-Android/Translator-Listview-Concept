@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/tan_background"
     android:minHeight="@dimen/list_item_height"
+
     android:orientation="horizontal">
 
     <ImageView
@@ -19,9 +20,8 @@
         android:layout_height="@dimen/list_item_height"
         android:orientation="vertical"
         android:paddingLeft="16dp"
+        android:background="?android:attr/selectableItemBackground"
         android:id="@+id/Text_Container">
-
-
         <TextView
             android:id="@+id/French_Textview"
             android:layout_width="match_parent"
@@ -29,6 +29,7 @@
             android:layout_weight="1"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
+
             android:gravity="bottom"
             android:textStyle="bold"
             tools:text="Lutti" />
@@ -46,6 +47,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="@dimen/list_item_height"
+        android:background="?android:attr/selectableItemBackground"
         android:src="@drawable/baseline_play_arrow_white_24dp"
         android:id="@+id/play_icon"
         android:paddingRight="20dp"
